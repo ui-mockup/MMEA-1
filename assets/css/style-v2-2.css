@@ -1,0 +1,191 @@
+/* =========================================================
+   Maritim Malaysia – Konsep 2.2
+   Tindihan di atas style.css + style-v2.css + style-v2-1.css
+   ========================================================= */
+
+/* ---------- Bar atas ---------- */
+.flag-img { width: 22px; height: 11px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.15); flex-shrink: 0; }
+/* Butang kebolehcapaian sejajar (tengah) dengan butang carian / menu di bawahnya:
+   butang bawah 42px, butang atas 32px -> anjak 5px dari kanan */
+.v2-2 .tb-a11y { margin-right: 5px; }
+
+/* ---------- Logo: Jata + lambang + teks rasmi ---------- */
+.v2-2 .brand--jata { gap: 8px; }
+.v2-2 .brand__jata { height: 44px; }
+.v2-2 .brand__divider { height: 36px; margin: 0 2px; }
+.v2-2 .brand__crest { width: 46px; height: 46px; margin-left: 0; }
+.brand__text--official { line-height: 1.2; margin-left: 4px; max-width: 250px; }
+.brand__text--official .brand__pre,
+.brand__text--official .brand__post { display: block !important; font-size: .68rem; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+.brand__text--official strong {
+  font-size: .86rem !important; font-weight: 800; color: var(--navy); text-transform: uppercase;
+  letter-spacing: .01em; line-height: 1.15; margin: 1px 0;
+}
+
+/* ---------- Hero tanpa label kecil ---------- */
+.v2-2 .banner h1 { margin-top: 0; }
+
+/* ---------- Responsif ---------- */
+/* logo lebih panjang -> rapatkan menu supaya baris header tidak terkeluar */
+.v2-2 .header__inner { gap: 16px; }
+.v2-2 .menu__link { padding-left: 9px; padding-right: 9px; }
+@media (max-width: 1200px) {
+  .v2-2 .menu__link { padding-left: 7px; padding-right: 7px; font-size: .84rem; }
+  .v2-2 .brand__text--official { max-width: 200px; }
+}
+/* skrin kecil desktop (992–1180px): menu penuh masih dipapar, jadi tunjuk Jata + lambang sahaja */
+@media (min-width: 992px) and (max-width: 1180px) {
+  .v2-2 .brand__text--official { display: none; }
+}
+@media (max-width: 640px) {
+  .v2-2 .brand__jata { height: 34px; }
+  .v2-2 .brand__divider { height: 28px; margin: 0; }
+  .v2-2 .brand__crest { width: 36px; height: 36px; }
+  .v2-2 .brand--jata { gap: 6px; }
+  .v2-2 .brand__text--official { max-width: 140px; margin-left: 2px; }
+  .v2-2 .brand { min-width: 0; }
+  .v2-2 .header__inner { gap: 8px; }
+  .v2-2 .header__actions { gap: 4px; }
+  .v2-2 .icon-btn { width: 38px; height: 38px; }
+  /* butang atas 32px vs butang bawah 38px -> anjak 3px */
+  .v2-2 .tb-a11y { margin-right: 3px; }
+  .brand__text--official strong { font-size: .64rem !important; }
+  .brand__text--official .brand__pre,
+  .brand__text--official .brand__post { font-size: .56rem; }
+}
+
+/* =========================================================
+   Kemaskini: jarak garisan seimbang + "Kenal pasti begini"
+   ========================================================= */
+
+/* ---------- Lambang dipotong tepat (tanpa ruang lutsinar) ----------
+   Kawasan lambang dalam logo-mobile.png: x 33–139, y 17–131 (107 x 115 px, imej 566 x 150).
+   Tukar --crest-h untuk saiz; jarak kiri/kanan garisan sentiasa sama (--brand-gap). */
+.v2-2 .brand--jata { gap: 0; --crest-h: 44px; --brand-gap: 14px; }
+.v2-2 .brand__jata { height: 44px; }
+.v2-2 .brand__divider { height: 38px; margin: 0 var(--brand-gap); }
+.brand__crestbox {
+  display: block; flex-shrink: 0; overflow: hidden;
+  height: var(--crest-h); width: calc(var(--crest-h) * 107 / 115);
+}
+.brand__crestbox img {
+  display: block; max-width: none; width: auto;
+  height: calc(var(--crest-h) * 150 / 115);
+  margin-left: calc(var(--crest-h) * -33 / 115);
+  margin-top: calc(var(--crest-h) * -17 / 115);
+}
+.v2-2 .brand__text--official { margin-left: var(--brand-gap); }
+
+/* ---------- "Kenal pasti begini" ---------- */
+.gov-toggle {
+  display: inline-flex; align-items: center; gap: 4px; margin-left: 4px;
+  padding: 2px 8px; border-radius: 6px; border: 1px solid transparent; background: transparent;
+  color: var(--yellow); font-size: .78rem; font-weight: 600; cursor: pointer; transition: background .2s, border-color .2s;
+}
+.gov-toggle:hover { background: rgba(255,255,255,.08); }
+.gov-toggle[aria-expanded="true"] { border-color: rgba(245,184,0,.4); background: rgba(255,255,255,.05); }
+.gov-toggle__chev { width: 14px; height: 14px; transition: transform .2s; }
+.gov-toggle[aria-expanded="true"] .gov-toggle__chev { transform: rotate(180deg); }
+.gov-toggle__short { display: none; }
+
+.gov-info { border-top: 1px solid rgba(255,255,255,.08); color: #fff; animation: govIn .25s ease; }
+@keyframes govIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.gov-info__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 22px; padding-bottom: 24px; }
+.gov-info__item { display: flex; gap: 14px; }
+.gov-info__ic { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.1); color: var(--yellow); }
+.gov-info__ic svg { width: 20px; height: 20px; }
+.gov-info__title { font-weight: 600; font-size: .95rem; }
+.gov-info p:not(.gov-info__title) { margin-top: 4px; font-size: .85rem; color: #C9D5EA; line-height: 1.5; }
+.gov-info strong { color: #fff; }
+
+@media (max-width: 991px) {
+  .gov-info__grid { gap: 24px; }
+}
+@media (max-width: 640px) {
+  .v2-2 .brand--jata { --crest-h: 34px; --brand-gap: 8px; }
+  .v2-2 .brand__jata { height: 34px; }
+  .v2-2 .brand__divider { height: 30px; }
+  /* bar atas: bendera + "Kenal pasti" di kiri, 999 + BM/EN + kebolehcapaian di kanan */
+  .v2-2 .topbar__left { display: flex; gap: 6px; }
+  .v2-2 .gov-label { display: none; }
+  .gov-toggle { margin-left: 0; padding: 2px 6px; }
+  .gov-toggle__long { display: none; }
+  .gov-toggle__short { display: inline; }
+  .v2-2 .topbar__right { width: auto; gap: 8px; }
+  .v2-2 .sos-pill { font-size: 0; gap: 5px; padding: 4px 10px; }
+  .v2-2 .sos-pill strong { font-size: .8rem; }
+  .gov-info__grid { grid-template-columns: 1fr; gap: 18px; padding-top: 18px; padding-bottom: 20px; }
+}
+
+/* =========================================================
+   Media sosial (rujukan: PDRM-2, latar putih)
+   ========================================================= */
+.sosmed { background: #fff; }
+.v2-2 .agensi { border-top: 1px solid var(--line); }
+
+/* penapis platform */
+.sosmed__filter { display: flex; align-items: center; gap: 4px; padding: 4px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); flex-wrap: wrap; }
+.sosmed__btn {
+  height: 36px; min-width: 36px; padding: 0 10px; border: 0; border-radius: 999px; background: transparent;
+  display: inline-grid; place-items: center; color: var(--muted); font-size: .85rem; font-weight: 700; cursor: pointer; transition: background .2s, color .2s;
+}
+.sosmed__btn svg { width: 17px; height: 17px; }
+.sosmed__btn:hover { background: #fff; color: var(--navy); }
+.sosmed__btn.is-active { background: var(--navy); color: #fff; }
+.sosmed__btn--all { padding: 0 16px; }
+.sosmed__btn--all.is-active { background: var(--yellow); color: var(--navy-900); }
+
+/* grid kad 3:4 */
+.sosmed__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.sosmed__tile {
+  position: relative; display: block; overflow: hidden; border-radius: 16px; aspect-ratio: 400 / 530;
+  background: var(--navy); box-shadow: var(--shadow-sm); isolation: isolate;
+}
+.sosmed__tile[hidden] { display: none; }
+.sosmed__img {
+  position: absolute; inset: 0;
+  background-image: url('../img/sosmed/sosmed-strip.webp');
+  background-size: 500% 100%; background-position: var(--pos, 0%) 0; background-repeat: no-repeat;
+  transition: transform .5s ease;
+}
+.sosmed__tile:hover .sosmed__img { transform: scale(1.05); }
+.sosmed__tile:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+/* lencana platform (tidak digunakan – tambah <span class="sosmed__badge ..."> jika perlu) */
+.sosmed__badge {
+  position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(255,255,255,.95); color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.sosmed__badge svg { width: 15px; height: 15px; }
+.sosmed__badge--facebook { color: #1877F2; }
+.sosmed__badge--instagram { color: #DD2A7B; }
+.sosmed__badge--youtube { color: #FF0000; }
+
+/* "Lihat di ..." muncul semasa hover */
+.sosmed__cta {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.96); color: var(--navy);
+  font-size: .78rem; font-weight: 700; opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s;
+}
+.sosmed__cta svg { width: 15px; height: 15px; }
+.sosmed__tile:hover .sosmed__cta, .sosmed__tile:focus-visible .sosmed__cta { opacity: 1; transform: none; }
+.c-facebook { color: #1877F2; } .c-instagram { color: #DD2A7B; } .c-youtube { color: #FF0000; }
+.sosmed__empty { margin-top: 12px; color: var(--muted); text-align: center; }
+
+@media (max-width: 1100px) {
+  .sosmed__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .sosmed .section__head { align-items: flex-start; }
+  .sosmed__filter { width: 100%; justify-content: space-between; }
+  /* telefon: leret mendatar */
+  .sosmed__grid { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 70%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; margin: 0 -20px; padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; }
+  .sosmed__grid::-webkit-scrollbar { display: none; }
+  .sosmed__tile { scroll-snap-align: start; }
+  .sosmed__cta { opacity: 1; transform: none; font-size: .72rem; padding: 6px 10px; }
+}
+
+/* ---------- Bar atas: ikon imej (ikut v3) – Soalan Lazim, Maklum Balas, Peta Laman ----------
+   Imej asal berwarna; dijadikan putih dengan penapis, 19px tinggi, 80% legap */
+.tb-icon--img img { display: block; height: 19px; width: auto; filter: brightness(0) invert(1); opacity: .8; transition: opacity .2s; }
+.tb-icon--img:hover img, .tb-icon--img:focus-visible img { opacity: 1; }

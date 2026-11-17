@@ -1,0 +1,75 @@
+/* =========================================================
+   Maritim Malaysia – Konsep 2.1
+   Tindihan kecil di atas style.css + style-v2.css
+   ========================================================= */
+
+/* ---------- Banner tanpa carian ---------- */
+.v2-1 .banner p { margin-bottom: 8px; }
+
+/* ---------- Perkhidmatan: tanpa latar titik, tajuk ikut seksyen lain ---------- */
+.v2-1 .svc3 { background-image: none; background-color: #fff; padding-top: 80px; }
+
+/* ---------- Jalur kecemasan: warna sama seperti footer ---------- */
+.v2-1 .sosbar { background: var(--navy-900); border-top: 0; }
+.v2-1 .sosbar__nums a { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+
+/* ---------- Berita + E-Poster: tajuk di luar, tinggi seimbang ---------- */
+.v2-1 .media2__grid { grid-template-columns: 1.7fr 1fr; align-items: stretch; }
+.v2-1 .media2__news,
+.v2-1 .media2__poster { display: flex; flex-direction: column; min-width: 0; }
+.v2-1 .media2 .section__head { min-height: 64px; align-items: flex-end; }
+
+/* senarai berita mengisi ketinggian penuh lajur */
+.v2-1 .news2__list { flex: 1; }
+.v2-1 .news2__row { flex: 1; }
+
+/* kotak poster mengisi ketinggian yang sama */
+.v2-1 .hut2 { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 16px; }
+.v2-1 .hut2 .hut__track { flex: none; }
+.v2-1 .hut2__foot { margin-top: 12px; }
+
+/* ---------- Header: Jata Negara + lambang Maritim ---------- */
+.brand--jata { gap: 12px; }
+.brand__jata { height: 50px; width: auto; flex-shrink: 0; }
+.brand__divider { width: 1px; height: 40px; background: var(--line); flex-shrink: 0; }
+
+/* ---------- Bar atas: ikon utiliti (gaya PDRM) ---------- */
+.v2-1 .topbar__inner { min-height: 44px; }
+.tb-icons { display: flex; align-items: center; gap: 2px; padding-left: 10px; border-left: 1px solid rgba(255,255,255,.15); }
+.tb-icon {
+  position: relative; width: 32px; height: 32px; border-radius: 50%; border: 0; padding: 0;
+  display: grid; place-items: center; background: transparent; color: #C9D5EA; cursor: pointer; transition: background .2s, color .2s;
+}
+.tb-icon svg { width: 17px; height: 17px; }
+.tb-icon:hover, .tb-icon:focus-visible { background: rgba(255,255,255,.12); color: #fff; outline: none; }
+.tb-a11y { color: var(--yellow); background: rgba(245,184,0,.12); }
+.tb-a11y:hover { background: var(--yellow); color: var(--navy-900); }
+.tb-a11y.is-active { background: var(--yellow); color: var(--navy-900); }
+/* tooltip */
+.tb-icon[data-tip]::after {
+  content: attr(data-tip); position: absolute; top: calc(100% + 8px); left: 50%; transform: translate(-50%, -4px);
+  white-space: nowrap; padding: 5px 10px; border-radius: 6px; background: #fff; color: var(--navy);
+  font-size: .72rem; font-weight: 600; box-shadow: var(--shadow-sm); opacity: 0; pointer-events: none; transition: .18s; z-index: 90;
+}
+.tb-icon[data-tip]:hover::after, .tb-icon[data-tip]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+.tb-a11y[data-tip]::after { left: auto; right: 0; transform: translateY(-4px); }
+.tb-a11y[data-tip]:hover::after { transform: none; }
+.v2-1 .topbar { position: relative; z-index: 60; }
+
+@media (max-width: 991px) {
+  .tb-icons { padding-left: 6px; }
+  .v2-1 .media2__grid { grid-template-columns: 1fr; gap: 48px; }
+  .v2-1 .media2 .section__head { min-height: 0; }
+  .v2-1 .hut2 { flex: none; max-width: 520px; width: 100%; }
+  .v2-1 .media2__poster .section__head { max-width: 520px; width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .v2-1 .media2 .section__head { flex-direction: row; align-items: flex-end; }
+  .v2-1 .svc3 { padding-top: 56px; }
+  .brand__jata { height: 40px; }
+  .brand--jata { gap: 8px; }
+  .brand__divider { height: 32px; }
+  .v2-1 .brand__text strong { font-size: .92rem; }
+  .tb-icons { display: none; }
+}

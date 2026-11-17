@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visi &amp; Misi – Maritim Malaysia</title>
+  <meta name="description" content="Portal Rasmi Agensi Penguatkuasaan Maritim Malaysia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- style.css = asas (warna, butang, menu, footer); style-v2.css = seksyen konsep 2 -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style-v2.css">
+  <link rel="stylesheet" href="assets/css/style-v2-1.css">
+  <link rel="stylesheet" href="assets/css/style-v2-2.css">
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+  <link rel="stylesheet" href="assets/css/inner.css">
+</head>
+<body class="v2 v2-1 v2-2 page-inner">
+
+<!-- ============ IKON (SVG SPRITE) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 21h20zM12 10v4m0 3v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17l-5.4 2.8 1.1-6.1L3.2 9.4l6.1-.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14m0 3v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h8M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 4v15h-7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3v13H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11v5c3 2 9 2 12 0v-5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-tender" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13zM9 21v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lifebuoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5.6 5.6 3.6 3.6m5.6 5.6 3.6 3.6m0-12.8-3.6 3.6m-5.6 5.6-3.6 3.6" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M4 7h16M4 7l-2.5 6a3 3 0 0 0 5 0zM20 7l-2.5 6a3 3 0 0 0 5 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 12 19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 21c2 0 2-1 4.5-1S10 21 12 21s2-1 4.5-1 2.5 1 4.5 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V21M8 11h8M4 13a8 8 0 0 0 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone-line" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sitemap" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="6" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="15" y="16" width="6" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v4M6 16v-4h12v4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="s-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></symbol>
+    <symbol id="s-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="s-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.5z"/></symbol>
+    <symbol id="s-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></symbol>
+    <symbol id="s-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.1 1.7 3.6 3.9 3.8v3.2c-1.4.1-2.7-.3-3.9-1.1v6.3c0 3.6-2.6 5.8-5.8 5.8-3.3 0-5.6-2.5-5.6-5.6 0-3.4 2.9-6 6.6-5.5v3.3c-1.6-.4-3.3.6-3.3 2.3 0 1.3 1 2.3 2.3 2.3 1.4 0 2.5-1 2.5-2.7V3z"/></symbol>
+    <symbol id="i-plane-sea" viewBox="0 0 24 24"><g transform="translate(2.2 0) scale(.82)"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></g><path d="M2 21.5c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sea-shield" viewBox="0 0 24 24"><path d="M12 2 5 4.5V10c0 3.6 2.6 6.6 7 7.8 4.4-1.2 7-4.2 7-7.8V4.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 6.5s2.6 2.7 2.6 4.6a2.6 2.6 0 0 1-5.2 0c0-1.9 2.6-4.6 2.6-4.6z" fill="currentColor"/><path d="M2 21.5c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-directory" viewBox="0 0 24 24"><rect x="4" y="2.5" width="15" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11.5" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.5 17c.6-2 2.2-3 4-3s3.4 1 4 3M19 6.5h2M19 11h2M19 15.5h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div id="a11y-root">
+
+<!-- ============ BAR ATAS + TALIAN KECEMASAN ============ -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <img class="flag-img" src="assets/img/flag-my.svg" alt="" aria-hidden="true">
+      <span class="gov-label">Portal Rasmi Kerajaan Malaysia</span>
+      <button type="button" class="gov-toggle" id="govToggle" aria-expanded="false" aria-controls="govInfo">
+        <span class="gov-toggle__long">Kenal pasti begini</span><span class="gov-toggle__short">Kenal pasti</span>
+        <svg class="gov-toggle__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="topbar__right">
+      <a href="#" class="sos-pill">
+        <span class="sos-pill__dot" aria-hidden="true"></span>
+        Kecemasan <strong>999</strong>
+        <span class="sos-pill__extra">· POMM <strong>03-8995 7208</strong></span>
+      </a>
+      <!-- Ikon pautan pantas (tooltip muncul bila dihalakan) -->
+      <nav class="tb-icons" aria-label="Pautan utiliti">
+        <a href="#" class="tb-icon tb-icon--img" data-tip="Soalan Lazim" aria-label="Soalan Lazim" data-chat-open><img src="assets/img/ikon/soalan-lazim.png" alt=""></a>
+        <a href="#" class="tb-icon tb-icon--img" data-tip="Hubungi" aria-label="Hubungi"><img src="assets/img/ikon/hubungi.png" alt=""></a>
+        <a href="#" class="tb-icon tb-icon--img" data-tip="Maklum Balas" aria-label="Maklum Balas"><img src="assets/img/ikon/maklumbalas.png" alt=""></a>
+        <a href="#" class="tb-icon tb-icon--img" data-tip="Peta Laman" aria-label="Peta Laman"><img src="assets/img/ikon/peta-laman.png" alt=""></a>
+      </nav>
+      <div class="lang">
+        <a href="#" class="is-active">BM</a>
+        <a href="#">EN</a>
+      </div>
+      <!-- Butang panel kebolehcapaian (accessibility/a11y.js) -->
+      <button type="button" class="tb-icon tb-a11y" data-a11y-open data-tip="Alat Kebolehcapaian" aria-label="Alat Kebolehcapaian">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7.2" r="1.4" fill="currentColor" stroke="none"/><path d="M6.5 9.5c3.6 1.2 7.4 1.2 11 0M12 9.5v9M9 21l3-5.5 3 5.5"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Panel "Kenal pasti begini": cara mengenal pasti portal rasmi kerajaan -->
+  <div class="gov-info" id="govInfo" hidden>
+    <div class="container gov-info__grid">
+      <div class="gov-info__item">
+        <span class="gov-info__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-6 10 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+        <div>
+          <p class="gov-info__title">Pautan portal rasmi berakhir dengan .gov.my</p>
+          <p>Sekiranya anda melihat pautan selain <strong>.gov.my</strong>, segera tutup halaman tersebut walaupun ia menyerupai portal rasmi.</p>
+        </div>
+      </div>
+      <div class="gov-info__item">
+        <span class="gov-info__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="16" r="1.4" fill="currentColor"/></svg></span>
+        <div>
+          <p class="gov-info__title">Portal yang selamat menggunakan HTTPS</p>
+          <p>Periksa ikon kunci mangga atau <strong>https://</strong> di hadapan pautan. Sekiranya tiada, tinggalkan laman sesawang tersebut serta-merta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER & MENU ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="brand brand--jata">
+      <!-- Jata Negara + lambang Maritim Malaysia -->
+      <img class="brand__jata" src="assets/img/jata.png" alt="Jata Negara">
+      <span class="brand__divider" aria-hidden="true"></span>
+      <!-- Bekas memotong ruang kosong lutsinar di sekeliling lambang supaya jarak garisan seimbang -->
+      <span class="brand__crestbox"><img src="assets/img/logo-mobile.png" alt="Lambang Maritim Malaysia"></span>
+      <span class="brand__text brand__text--official">
+        <small class="brand__pre">Laman Web Rasmi</small>
+        <strong>Agensi Penguatkuasaan Maritim Malaysia</strong>
+        <small class="brand__post">Kementerian Dalam Negeri</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Menu utama">
+      <div class="nav__head">
+        <strong>Menu</strong>
+        <button type="button" class="nav__close" id="navClose" aria-label="Tutup menu">&times;</button>
+      </div>
+      <ul class="menu">
+        <li class="menu__item"><a href="index.html" class="menu__link">Utama</a></li>
+
+        <li class="menu__item has-sub">
+          <a href="#" class="menu__link is-current">Profil <i class="caret"></i></a>
+          <ul class="submenu">
+            <li><a href="#">Perutusan Ketua Pengarah</a></li>
+            <li><a href="#">Latar Belakang APMM</a></li>
+            <li><a href="visi-misi.html" aria-current="page">Visi &amp; Misi</a></li>
+            <li><a href="#">Fungsi</a></li>
+            <li><a href="#">Misi Perkhidmatan Pelanggan</a></li>
+            <li><a href="#">Carta Organisasi</a></li>
+            <li><a href="#">Logo &amp; Reka Bentuk</a></li>
+            <li><a href="#">Piagam Pelanggan</a></li>
+            <li><a href="#">Ketua Pegawai Maklumat</a></li>
+          </ul>
+        </li>
+
+        <!-- MEGA MENU PERKHIDMATAN -->
+        <li class="menu__item has-sub has-mega">
+          <a href="#" class="menu__link">Perkhidmatan <i class="caret"></i></a>
+          <div class="submenu mega">
+            <div class="mega__col">
+              <h6>Keselamatan di Laut</h6>
+              <ul>
+                <li><a href="#">Mencari &amp; Menyelamat</a></li>
+                <li><a href="#">Kawalan Pencemaran Maritim</a></li>
+                <li><a href="#">Tindakan Khas &amp; Penyelamat</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h6>Penguatkuasaan</h6>
+              <ul>
+                <li><a href="#">Penguatkuasaan Undang-undang</a></li>
+                <li><a href="#">Pengawasan Udara &amp; Pantai</a></li>
+                <li><a href="#">Pencegahan Jenayah Maritim</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h6>e-Perkhidmatan</h6>
+              <ul>
+                <li><a href="#">Sistem Atas Talian</a></li>
+                <li><a href="#">eAduan</a></li>
+                <li><a href="#">Aplikasi Mudah Alih</a></li>
+                <li><a href="#">Tender &amp; Sebut Harga</a></li>
+              </ul>
+            </div>
+            <div class="mega__col mega__col--promo mega__col--photo">
+              <span class="badge badge--red">24 Jam</span>
+              <h5>Pusat Operasi Maritim</h5>
+              <p>03-8995 7208 · 019-261 1833</p>
+              <a href="#" class="btn btn--yellow btn--sm">Kecemasan 999</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="menu__item has-sub">
+          <a href="#" class="menu__link">Direktori <i class="caret"></i></a>
+          <ul class="submenu submenu--2col">
+            <li><a href="#">Ibu Pejabat</a></li>
+            <li><a href="#">Maritim Negeri Kedah/Perlis</a></li>
+            <li><a href="#">Maritim Negeri Pulau Pinang</a></li>
+            <li><a href="#">Maritim Negeri Perak</a></li>
+            <li><a href="#">Maritim Negeri Selangor</a></li>
+            <li><a href="#">Maritim Negeri Melaka &amp; N. Sembilan</a></li>
+            <li><a href="#">Maritim Negeri Johor</a></li>
+            <li><a href="#">Maritim Negeri Pahang</a></li>
+            <li><a href="#">Maritim Negeri Terengganu</a></li>
+            <li><a href="#">Maritim Negeri Kelantan</a></li>
+            <li><a href="#">Maritim Negeri Sabah</a></li>
+            <li><a href="#">Maritim Negeri Sarawak</a></li>
+          </ul>
+        </li>
+
+        <li class="menu__item has-sub">
+          <a href="#" class="menu__link">Media <i class="caret"></i></a>
+          <ul class="submenu">
+            <li><a href="#">Berita Utama</a></li>
+            <li><a href="#">Siaran Media</a></li>
+            <li><a href="#">Aktiviti APMM</a></li>
+            <li><a href="#">Galeri Foto</a></li>
+            <li><a href="#">Galeri Video</a></li>
+          </ul>
+        </li>
+
+        <li class="menu__item has-sub">
+          <a href="#" class="menu__link">Penerbitan <i class="caret"></i></a>
+          <ul class="submenu">
+            <li><a href="#">Majalah Seahawk</a></li>
+            <li><a href="#">Laporan Tahunan</a></li>
+            <li><a href="#">Pelan Strategik</a></li>
+            <li><a href="#">e-Poster &amp; Infografik</a></li>
+          </ul>
+        </li>
+
+        <li class="menu__item"><a href="#" class="menu__link">Tender</a></li>
+
+        <li class="menu__item has-sub">
+          <a href="#" class="menu__link">Hubungi <i class="caret"></i></a>
+          <ul class="submenu submenu--right">
+            <li><a href="#">Alamat | Telefon | Faks</a></li>
+            <li><a href="#">Peta Lokasi Maritim Malaysia</a></li>
+            <li><a href="#">eAduan</a></li>
+            <li><a href="#">Maklum Balas Pelanggan</a></li>
+            <li><a href="#">Soalan Lazim</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button type="button" class="icon-btn" aria-label="Carian"><svg width="20" height="20"><use href="#i-search"/></svg></button>
+      <button type="button" class="icon-btn burger" id="navOpen" aria-label="Buka menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<main id="kandungan">
+
+<!-- ============ BANNER HALAMAN ============ -->
+<section class="page-hero">
+  <div class="page-hero__media" aria-hidden="true" data-a11y-bg></div>
+  <div class="container page-hero__inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Utama</a>
+      <span aria-hidden="true">›</span>
+      <a href="#">Profil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Visi &amp; Misi</span>
+    </nav>
+    <h1>Visi &amp; Misi</h1>
+    <p>Hala tuju dan komitmen Agensi Penguatkuasaan Maritim Malaysia.</p>
+  </div>
+</section>
+
+<!-- ============ KANDUNGAN + MENU SISI ============ -->
+<section class="inner">
+  <div class="container inner__grid">
+
+    <!-- Menu sisi (kiri) -->
+    <aside class="side" aria-label="Menu Mengenai Kami">
+      <!-- Telefon: butang buka/tutup menu sisi -->
+      <button type="button" class="side__toggle" id="sideToggle" aria-expanded="false" aria-controls="sideNav">
+        <span><small>Mengenai Kami</small>Visi &amp; Misi</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="side__card" id="sideNav">
+        <p class="side__title">Mengenai Kami</p>
+        <ul class="side__list">
+          <li><a href="#">Perutusan Ketua Pengarah</a></li>
+          <li><a href="#">Latar Belakang</a></li>
+          <li><a href="visi-misi.html" class="is-active" aria-current="page">Visi &amp; Misi</a></li>
+          <li><a href="#">Objektif</a></li>
+          <li><a href="#">Fungsi</a></li>
+          <li><a href="#">Misi Perkhidmatan Pelanggan</a></li>
+          <li><a href="#">Carta Organisasi</a></li>
+          <li><a href="#">Fungsi Bahagian</a></li>
+          <li><a href="#">Logo &amp; Bendera</a></li>
+          <li><a href="#">Piagam Pelanggan</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Kandungan utama -->
+    <article class="content">
+      <!-- Kandungan daripada: mmea.gov.my/index.php/ms/mengenai-kami-2/visi-misi -->
+      <div class="vm">
+        <section class="vm__card vm__card--visi">
+          <span class="vm__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <h2>Visi</h2>
+          <blockquote>“Menjadi antara agensi penguatkuasaan Maritim yang terbaik di dunia”</blockquote>
+        </section>
+
+        <section class="vm__card vm__card--misi">
+          <span class="vm__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg></span>
+          <h2>Misi</h2>
+          <blockquote>“Menguatkuasakan undang-undang serta menyelamat nyawa dan harta benda di laut bagi memastikan kesejahteraan perairan negara”</blockquote>
+        </section>
+      </div>
+
+
+
+    </article>
+
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="container footer__grid">
+    <div class="footer__about">
+      <p>Agensi Penguatkuasaan Maritim Malaysia<br>Kementerian Dalam Negeri<br>Aras 4-12, One IOI Square, IOI Resort,<br>62502 Putrajaya.</p>
+      <p>Tel: 03-8995 7000 &nbsp;·&nbsp; Faks: 03-8941 4000</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.5z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h6>Perkhidmatan</h6>
+      <ul>
+        <li><a href="#">Mencari &amp; Menyelamat</a></li>
+        <li><a href="#">Penguatkuasaan</a></li>
+        <li><a href="#">Pengawasan Udara &amp; Pantai</a></li>
+        <li><a href="#">Kawalan Pencemaran Maritim</a></li>
+        <li><a href="#">e-Perkhidmatan</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Ruangan</h6>
+      <ul>
+        <li><a href="#">Integriti</a></li>
+        <li><a href="#">Inovasi</a></li>
+        <li><a href="#">Penerbitan</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Piagam Pelanggan</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Jumlah Pelawat</h6>
+      <!-- Nilai contoh – sambungkan kepada kaunter pelawat sebenar -->
+      <ul class="visitors">
+        <li><small>Hari Ini</small><strong>1,248</strong></li>
+        <li><small>Bulan Ini</small><strong>18,532</strong></li>
+        <li><small>Jumlah</small><strong>666,362</strong></li>
+      </ul>
+      <p class="footer__small">Kemaskini terakhir: 16 November 2026</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <span>© 2026 Agensi Penguatkuasaan Maritim Malaysia. Hak Cipta Terpelihara.</span>
+      <span class="footer__links"><a href="#">Dasar Privasi</a><a href="#">Dasar Keselamatan</a><a href="#">Penafian</a></span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /#a11y-root -->
+
+<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main-v2.js"></script>
+<script>
+  // "Kenal pasti begini" – buka/tutup panel maklumat portal rasmi
+  (function () {
+    var btn = document.getElementById('govToggle'), panel = document.getElementById('govInfo');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open);
+      panel.hidden = !open;
+    });
+  })();
+</script>
+<!-- Pembantu Soalan Lazim (chatbot) -->
+<script src="assets/js/chatbot.js" defer></script>
+<!-- Panel kebolehcapaian (salinan dari folder maritim/accessibility) -->
+<script src="accessibility/a11y.js" data-lang="ms" data-storage-key="maritim-a11y" data-reader-hide=".marquee,.banner__media" defer></script>
+<script>
+  // Media sosial – tapis kad mengikut platform
+  (function () {
+    var btns = document.querySelectorAll('.sosmed__btn'), tiles = document.querySelectorAll('.sosmed__tile'), empty = document.getElementById('sosmedEmpty');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.dataset.filter, shown = 0;
+        btns.forEach(function (x) { x.classList.toggle('is-active', x === b); x.setAttribute('aria-pressed', x === b); });
+        tiles.forEach(function (t) { var on = f === 'all' || t.dataset.platform === f; t.hidden = !on; if (on) shown++; });
+        if (empty) empty.hidden = shown > 0;
+      });
+    });
+  })();
+</script>
+<script>
+  // Menu sisi (telefon): buka/tutup
+  (function () {
+    var t = document.getElementById('sideToggle'), n = document.getElementById('sideNav');
+    if (t && n) t.addEventListener('click', function () {
+      var open = t.getAttribute('aria-expanded') !== 'true';
+      t.setAttribute('aria-expanded', open); n.classList.toggle('is-open', open);
+    });
+  })();
+</script>
+</body>
+</html>

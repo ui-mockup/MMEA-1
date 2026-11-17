@@ -1,0 +1,170 @@
+/* =========================================================
+   Pembantu Soalan Lazim (chatbot) – Maritim Malaysia
+   Guna token warna dari style.css (--navy, --yellow, dll.)
+   ========================================================= */
+.mchat { --mc-navy: var(--navy, #0B2A5B); --mc-navy-900: var(--navy-900, #071D40); --mc-yellow: var(--yellow, #F5B800); --mc-line: var(--line, #E2E8F1); --mc-bg: var(--bg, #F4F7FB); --mc-muted: var(--muted, #5B6B82); font-family: inherit; }
+
+/* butang pelancar */
+.mchat-launch {
+  position: fixed; right: 20px; bottom: 20px; z-index: 9000;
+  display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 16px;
+  border: 0; border-radius: 999px; background: var(--mc-navy); color: #fff; font: 700 .92rem/1 inherit; cursor: pointer;
+  box-shadow: 0 12px 30px -10px rgba(7,29,64,.6); transition: transform .2s, background .2s;
+}
+.mchat-launch svg { width: 24px; height: 24px; color: var(--mc-yellow); }
+.mchat-launch:hover { transform: translateY(-2px); background: var(--mc-navy-900); }
+.mchat-launch:focus-visible { outline: 3px solid var(--mc-yellow); outline-offset: 3px; }
+.mchat-launch::after { /* titik "dalam talian" */
+  content: ""; position: absolute; top: 8px; left: 34px; width: 9px; height: 9px; border-radius: 50%;
+  background: #22C55E; box-shadow: 0 0 0 2px var(--mc-navy);
+}
+.mchat.is-open .mchat-launch { transform: scale(.9); opacity: 0; pointer-events: none; }
+
+/* panel */
+.mchat-panel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 9001; width: 380px; height: min(600px, calc(100vh - 40px));
+  display: flex; flex-direction: column; background: #fff; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 30px 70px -20px rgba(7,29,64,.45), 0 0 0 1px rgba(7,29,64,.06);
+  opacity: 0; visibility: hidden; transform: translateY(16px) scale(.98); transform-origin: bottom right;
+  transition: opacity .25s, transform .25s, visibility 0s .25s;
+}
+.mchat.is-open .mchat-panel { opacity: 1; visibility: visible; transform: none; transition: opacity .25s, transform .25s; }
+
+.mchat-head {
+  position: relative; display: flex; align-items: center; gap: 12px; padding: 16px 14px 16px 18px;
+  background: linear-gradient(135deg, var(--mc-navy), var(--mc-navy-900)); color: #fff;
+}
+.mchat-head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--red, #D0202E) 0 50%, var(--mc-yellow) 50%); }
+.mchat-avatar { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.12); color: var(--mc-yellow); flex-shrink: 0; }
+.mchat-avatar svg { width: 22px; height: 22px; }
+.mchat-title { flex: 1; min-width: 0; line-height: 1.25; }
+.mchat-title strong { display: block; font-size: 1rem; }
+.mchat-title small { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; color: #C9D5EA; }
+.mchat-dot { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; }
+.mchat-icon { width: 34px; height: 34px; border: 0; border-radius: 50%; background: transparent; color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .2s; }
+.mchat-icon svg { width: 17px; height: 17px; }
+.mchat-icon:hover { background: rgba(255,255,255,.14); }
+
+/* mesej */
+.mchat-log { flex: 1; overflow-y: auto; padding: 18px 16px 8px; background: var(--mc-bg); display: flex; flex-direction: column; gap: 10px; }
+.mchat-row { display: flex; gap: 8px; align-items: flex-end; max-width: 100%; animation: mchatIn .25s ease; }
+@keyframes mchatIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.mchat-row--user { justify-content: flex-end; }
+.mchat-mini { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--mc-navy); color: var(--mc-yellow); flex-shrink: 0; }
+.mchat-mini svg { width: 15px; height: 15px; }
+.mchat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: .88rem; line-height: 1.5; word-wrap: break-word; }
+.mchat-row--bot .mchat-bubble { background: #fff; color: var(--ink, #0F1B2D); border: 1px solid var(--mc-line); border-bottom-left-radius: 4px; }
+.mchat-row--user .mchat-bubble { background: var(--mc-navy); color: #fff; border-bottom-right-radius: 4px; }
+.mchat-bubble b { color: var(--mc-navy); }
+.mchat-row--user .mchat-bubble b { color: var(--mc-yellow); }
+
+.mchat-typing { display: inline-flex; gap: 4px; padding: 4px 0; }
+.mchat-typing i { width: 7px; height: 7px; border-radius: 50%; background: #9AA7BB; animation: mchatDot 1s infinite; }
+.mchat-typing i:nth-child(2) { animation-delay: .15s; } .mchat-typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes mchatDot { 0%, 60%, 100% { transform: none; opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+/* cadangan topik */
+.mchat-chips { display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; background: var(--mc-bg); border-top: 1px solid var(--mc-line); scrollbar-width: none; }
+.mchat-chips::-webkit-scrollbar { display: none; }
+.mchat-chip { flex-shrink: 0; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--mc-line); background: #fff; color: var(--mc-navy); font: 600 .78rem/1.2 inherit; cursor: pointer; transition: .2s; }
+.mchat-chip:hover { border-color: var(--mc-navy); background: var(--mc-navy); color: #fff; }
+
+/* input */
+.mchat-form { display: flex; gap: 8px; padding: 12px 14px 8px; background: #fff; }
+.mchat-input { flex: 1; min-width: 0; height: 44px; padding: 0 14px; border: 1px solid var(--mc-line); border-radius: 12px; font: inherit; font-size: .9rem; color: var(--ink, #0F1B2D); outline: none; transition: border-color .2s; }
+.mchat-input:focus { border-color: var(--mc-navy); box-shadow: 0 0 0 3px rgba(11,42,91,.1); }
+.mchat-send { width: 44px; height: 44px; flex-shrink: 0; border: 0; border-radius: 12px; background: var(--mc-yellow); color: var(--mc-navy-900); display: grid; place-items: center; cursor: pointer; transition: transform .15s; }
+.mchat-send svg { width: 20px; height: 20px; }
+.mchat-send:hover { transform: translateY(-1px); }
+.mchat-note { padding: 0 14px 12px; font-size: .7rem; color: var(--mc-muted); background: #fff; }
+.mchat-note b { color: var(--red, #D0202E); }
+
+/* telefon: panel penuh dari bawah, pelancar bulat */
+@media (max-width: 640px) {
+  .mchat-launch { right: 16px; bottom: 16px; width: 56px; height: 56px; padding: 0; justify-content: center; }
+  .mchat-launch span { display: none; }
+  .mchat-launch::after { top: 10px; left: auto; right: 12px; }
+  .mchat-panel { right: 0; left: 0; bottom: 0; width: 100%; height: 88vh; height: 88dvh; border-radius: 20px 20px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mchat-panel, .mchat-launch, .mchat-row { transition: none; animation: none; }
+}
+
+/* =========================================================
+   Avatar pembantu (assets/img/chatbot-avatar.png)
+   object-position memfokuskan muka dalam bulatan
+   ========================================================= */
+.mchat-launch__img, .mchat-avatar__img, .mchat-mini__img {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; border-radius: 50%;
+}
+/* pelancar: avatar bulat + teks */
+.mchat-launch { height: 56px; padding: 0 22px 0 6px; gap: 12px; }
+.mchat-launch__img { width: 44px; height: 44px; flex-shrink: 0; box-shadow: 0 0 0 2px var(--mc-yellow); background: #fff; }
+.mchat-launch::after { top: auto; bottom: 8px; left: 40px; width: 11px; height: 11px; }
+/* kepala panel */
+.mchat-avatar { width: 44px; height: 44px; padding: 0; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--mc-yellow); overflow: hidden; }
+/* avatar kecil di sebelah jawapan */
+.mchat-mini { width: 28px; height: 28px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1.5px var(--mc-line); overflow: hidden; }
+
+@media (max-width: 640px) {
+  .mchat-launch { width: 64px; height: 64px; padding: 4px; border-radius: 50%; }
+  .mchat-launch__img { width: 56px; height: 56px; }
+  .mchat-launch::after { left: auto; right: 4px; bottom: 4px; top: auto; }
+}
+
+/* =========================================================
+   Pelancar bertindan: avatar besar di atas, label "Tanya Kami" di bawah
+   ========================================================= */
+.mchat-launch {
+  flex-direction: column; gap: 0; width: auto; height: auto; padding: 0;
+  background: transparent; box-shadow: none; border-radius: 0; color: #fff;
+}
+.mchat-launch:hover { background: transparent; transform: translateY(-3px); }
+.mchat-launch__img {
+  width: 76px; height: 76px; background: #fff;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px var(--mc-yellow), 0 14px 30px -8px rgba(7,29,64,.55);
+  animation: mchatPulse 2.4s ease-out infinite;
+}
+@keyframes mchatPulse {
+  0%   { box-shadow: 0 0 0 3px var(--mc-yellow), 0 0 0 3px rgba(245,184,0,.55), 0 14px 30px -8px rgba(7,29,64,.55); }
+  70%  { box-shadow: 0 0 0 3px var(--mc-yellow), 0 0 0 18px rgba(245,184,0,0),  0 14px 30px -8px rgba(7,29,64,.55); }
+  100% { box-shadow: 0 0 0 3px var(--mc-yellow), 0 0 0 18px rgba(245,184,0,0),  0 14px 30px -8px rgba(7,29,64,.55); }
+}
+.mchat-launch span {
+  position: relative; z-index: 1; margin-top: -12px; display: inline-block !important;
+  padding: 6px 14px; border-radius: 999px; background: var(--mc-navy); border: 2px solid #fff;
+  font-size: .8rem; font-weight: 700; white-space: nowrap; box-shadow: 0 6px 14px -6px rgba(7,29,64,.6);
+}
+.mchat-launch:hover span { background: var(--mc-navy-900); }
+.mchat-launch::after { /* titik "dalam talian" di bucu atas kanan avatar */
+  top: 4px; bottom: auto; left: calc(50% + 22px); right: auto; width: 14px; height: 14px; box-shadow: 0 0 0 3px #fff;
+}
+.mchat-launch:focus-visible { outline: 3px solid var(--mc-yellow); outline-offset: 4px; border-radius: 16px; }
+
+@media (max-width: 640px) {
+  .mchat-launch { right: 12px; bottom: 14px; width: auto; height: auto; padding: 0; border-radius: 0; }
+  .mchat-launch__img { width: 64px; height: 64px; }
+  .mchat-launch span { font-size: .72rem; padding: 5px 11px; margin-top: -10px; }
+  .mchat-launch::after { top: 3px; left: calc(50% + 17px); right: auto; bottom: auto; width: 12px; height: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .mchat-launch__img { animation: none; } }
+
+/* =========================================================
+   Warna biru terang daripada lambang Maritim Malaysia (#39ADD2)
+   Teks biru gelap digunakan atas biru terang supaya mudah dibaca
+   (teks putih atas #39ADD2 terlalu pudar, kontras ~2.6:1).
+   ========================================================= */
+.mchat { --mc-brand: #39ADD2; --mc-brand-dark: #2593BC; }
+.mchat-launch span { background: var(--mc-brand); color: var(--mc-navy-900); border-color: #fff; }
+.mchat-launch:hover span { background: var(--mc-brand-dark); color: var(--mc-navy-900); }
+.mchat-launch__img { animation-name: mchatPulseBrand; }
+@keyframes mchatPulseBrand {
+  0%   { box-shadow: 0 0 0 3px var(--mc-brand), 0 0 0 3px rgba(57,173,210,.6), 0 14px 30px -8px rgba(7,29,64,.55); }
+  70%  { box-shadow: 0 0 0 3px var(--mc-brand), 0 0 0 18px rgba(57,173,210,0), 0 14px 30px -8px rgba(7,29,64,.55); }
+  100% { box-shadow: 0 0 0 3px var(--mc-brand), 0 0 0 18px rgba(57,173,210,0), 0 14px 30px -8px rgba(7,29,64,.55); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mchat-launch__img { animation: none; box-shadow: 0 0 0 3px var(--mc-brand), 0 14px 30px -8px rgba(7,29,64,.55); }
+}
+.mchat-launch:focus-visible { outline-color: var(--mc-brand); }

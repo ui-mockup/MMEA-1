@@ -1,0 +1,133 @@
+/* =========================================================
+   Maritim Malaysia – Halaman Dalam (cth. Visi & Misi)
+   Guna bersama style.css, style-v2*.css
+   ========================================================= */
+
+/* ---------- Banner halaman ---------- */
+.page-hero { position: relative; overflow: hidden; color: #fff; background: var(--navy-900); }
+.page-hero__media {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7,29,64,.96) 0%, rgba(7,29,64,.82) 45%, rgba(7,29,64,.45) 100%),
+    url('../img/hero/semporna.jpg') center 45% / cover no-repeat;
+}
+.page-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: linear-gradient(90deg, var(--navy) 0 33.3%, var(--red) 33.3% 66.6%, var(--yellow) 66.6%); }
+.page-hero__inner { position: relative; padding-top: 48px; padding-bottom: 56px; }
+.page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.02em; margin-top: 14px; }
+.page-hero p { color: #C9D5EA; margin-top: 8px; max-width: 560px; }
+
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .82rem; color: #AFC0DB; }
+.crumbs a { color: #fff; opacity: .85; }
+.crumbs a:hover { opacity: 1; color: var(--yellow); }
+.crumbs [aria-current] { color: var(--yellow); font-weight: 600; }
+
+/* ---------- Susun atur: menu sisi kiri + kandungan ---------- */
+.inner { background: var(--bg); padding: 48px 0 80px; }
+.inner__grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
+
+/* menu sisi */
+.side { position: sticky; top: 104px; display: flex; flex-direction: column; gap: 16px; }
+.side__toggle { display: none; }
+.side__card { background: #fff; border-radius: 16px; border: 1px solid var(--line); overflow: hidden; }
+.side__title {
+  padding: 16px 20px; background: var(--navy); color: #fff; font-weight: 800; font-size: .95rem;
+  letter-spacing: .02em; border-bottom: 3px solid var(--yellow);
+}
+.side__list { padding: 8px; }
+.side__list a {
+  position: relative; display: block; padding: 11px 14px 11px 18px; border-radius: 10px;
+  font-size: .9rem; font-weight: 500; color: var(--ink); transition: background .15s, color .15s, padding .15s;
+}
+.side__list a:hover { background: var(--bg); color: var(--navy); padding-left: 22px; }
+.side__list a.is-active { background: #E7ECF4; color: var(--navy); font-weight: 700; }
+.side__list a.is-active::before { content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px; width: 4px; border-radius: 4px; background: var(--red); }
+
+.side__help { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+.side__help-title { font-weight: 800; color: var(--navy); }
+.side__help p:not(.side__help-title) { font-size: .85rem; color: var(--muted); margin: 4px 0 12px; }
+.side__tel { display: block; margin-top: 10px; font-weight: 700; color: var(--navy); font-size: .9rem; }
+
+/* ---------- Kandungan ---------- */
+.content { min-width: 0; }
+.vm { display: grid; gap: 20px; }
+.vm__card { position: relative; overflow: hidden; border-radius: 20px; padding: 36px 40px 40px; }
+.vm__card h2 { font-size: .85rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; margin: 16px 0 10px; }
+.vm__card blockquote { margin: 0; font-size: clamp(1.25rem, 2.4vw, 1.7rem); font-weight: 700; line-height: 1.4; letter-spacing: -.01em; }
+.vm__icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; }
+.vm__icon svg { width: 26px; height: 26px; }
+
+.vm__card--visi { background: linear-gradient(140deg, var(--navy) 0%, var(--navy-900) 100%); color: #fff; }
+.vm__card--visi .vm__icon { background: rgba(255,255,255,.12); color: var(--yellow); }
+.vm__card--visi h2 { color: var(--yellow); }
+.vm__card--visi::after { /* corak bulatan hiasan */
+  content: ""; position: absolute; right: -70px; bottom: -70px; width: 260px; height: 260px; border-radius: 50%;
+  border: 40px solid rgba(255,255,255,.05);
+}
+
+.vm__card--misi { background: #fff; border: 1px solid var(--line); color: var(--navy); }
+.vm__card--misi::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--red); }
+.vm__card--misi .vm__icon { background: var(--red-50); color: var(--red); }
+.vm__card--misi h2 { color: var(--red); }
+
+/* moto */
+.motto { margin-top: 20px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px 28px; }
+.motto__label { font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.motto__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.motto__list li {
+  display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 14px;
+  background: var(--bg); font-weight: 800; font-size: 1.15rem; color: var(--navy);
+}
+.motto__list span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--yellow); color: var(--navy-900); font-size: .78rem; flex-shrink: 0; }
+
+/* kaki kandungan */
+.content__meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+.content__tools { display: flex; gap: 8px; }
+.tool-btn { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--navy); font: 600 .82rem/1 inherit; cursor: pointer; transition: .2s; }
+.tool-btn svg { width: 16px; height: 16px; }
+.tool-btn:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
+
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.pager__item { display: flex; flex-direction: column; gap: 4px; padding: 18px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); transition: .2s; }
+.pager__item small { font-size: .78rem; color: var(--muted); font-weight: 600; }
+.pager__item strong { color: var(--navy); font-size: 1rem; }
+.pager__item:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.pager__item--next { text-align: right; }
+
+/* ---------- Cetak: kandungan sahaja ---------- */
+@media print {
+  .topbar, .header, .page-hero__media, .side, .content__tools, .pager, .footer, .agensi, .mchat { display: none !important; }
+  .page-hero { background: none; color: #000; }
+  .page-hero p, .crumbs, .crumbs a { color: #333; }
+  .inner { padding: 0; background: none; }
+  .inner__grid { display: block; }
+  .vm__card--visi { background: none; color: #000; border: 1px solid #ccc; }
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 991px) {
+  .inner { padding-top: 24px; }
+  .inner__grid { grid-template-columns: 1fr; gap: 20px; }
+  .side { position: static; }
+  /* menu sisi jadi senarai lungsur di atas kandungan */
+  .side__toggle {
+    display: flex; align-items: center; justify-content: space-between; width: 100%;
+    padding: 14px 18px; border-radius: 14px; border: 1px solid var(--line); background: #fff; cursor: pointer;
+    font: inherit; text-align: left; color: var(--navy);
+  }
+  .side__toggle span { display: flex; flex-direction: column; font-weight: 800; }
+  .side__toggle small { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .side__toggle svg { width: 20px; height: 20px; transition: transform .2s; }
+  .side__toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .side__card { display: none; }
+  .side__card.is-open { display: block; animation: fadeUp .25s ease both; }
+  .side__title { display: none; }
+  .side__help { display: none; }
+}
+@media (max-width: 640px) {
+  .page-hero__inner { padding-top: 32px; padding-bottom: 40px; }
+  .vm__card { padding: 26px 22px 28px; border-radius: 16px; }
+  .motto { padding: 20px; }
+  .motto__list { grid-template-columns: 1fr; }
+  .pager { grid-template-columns: 1fr; }
+  .pager__item--next { text-align: left; }
+}
